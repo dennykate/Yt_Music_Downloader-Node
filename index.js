@@ -6,6 +6,13 @@ const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
+app.get("/", (req, res) => {
+  return res.status(200).json({
+    success: true,
+    message: "SERVER IS RUNNING",
+  });
+});
+
 app.get("/:id", async (req, res) => {
   try {
     const videoId = req.params.id;
