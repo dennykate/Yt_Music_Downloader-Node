@@ -6,9 +6,10 @@ const cors = require("cors");
 const app = express();
 app.use(
   cors({
-    origin: ["*"],
+    origin: "*",
   })
 );
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
@@ -19,7 +20,7 @@ app.get("/", (req, res) => {
   });
 });
 
-app.get("/:id", async (req, res) => {
+app.get("/yt/:id", async (req, res) => {
   try {
     const videoId = req.params.id;
 
